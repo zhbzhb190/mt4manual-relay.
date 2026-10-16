@@ -1,0 +1,9 @@
+{
+  "name": "mt4manual-relay",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "main": "relay.js",
+  "engines": { "node": ">=18" },
+  "scripts": { "start": "node relay.js" }
+}

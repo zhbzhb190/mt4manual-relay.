@@ -1,0 +1,13 @@
+# Render.com free web service (free account needed; $0 plan). Free instances sleep after 15 min with no traffic;
+# the EA polls every 1-3 s so it stays awake while MT4 runs. State is in memory only (snapshots + command queue).
+services:
+  - type: web
+    name: mt4manual-relay
+    runtime: node
+    plan: free
+    buildCommand: "true"
+    startCommand: node relay.js
+    healthCheckPath: /health
+    envVars:
+      - key: RELAY_TOKEN
+        sync: false   # paste the token from windows-setup/.bridge-token in the Render dashboard
